@@ -440,10 +440,22 @@ class IlDetaySayfasi extends StatelessWidget {
       'Restoranlar': ['Zonguldak Lokantası'],
       'Tarihi Yerler': ['Zonguldak Kalesi'],
     },
+    'Yozgat': {
+      'Müzeler': ['Yozgat Müzesi'],
+      'Tiyatro Salonları': ['Yozgat Belediyesi Kültür Merkezi'],
+      'Restoranlar': ['Yozgat Mutfağı'],
+      'Tarihi Yerler': ['Basilica Therma (Sarıkaya Roma Hamamı)'],
+    },
+    'Kocaeli': {
+      'Müzeler': ['Kocaeli Arkeoloji ve Etnografya Müzesi'],
+      'Tiyatro Salonları': ['Kocaeli Şehir Tiyatrosu'],
+      'Restoranlar': ['İzmit Mutfağı'],
+      'Tarihi Yerler': ['Saat Kulesi', 'Eskihisar Kalesi'],
+    },
   };
 
-  // Mekan açıklamaları
   final Map<String, String> mekanDetaylari = {
+    // Erzurum
     'Erzurum Kalesi':
         'Erzurum Kalesi, Roma dönemine kadar uzanan köklü bir geçmişe sahiptir.',
     'Erzurum Arkeoloji Müzesi':
@@ -452,6 +464,36 @@ class IlDetaySayfasi extends StatelessWidget {
         'Meşhur Erzurum yemeği olan cağ kebabı, yatay şişlerde servis edilir.',
     'Erzurum Devlet Tiyatrosu':
         'Şehirde kültürel etkinliklerin düzenlendiği önemli bir sahnedir.',
+
+    // Adana
+    'Adana Arkeoloji Müzesi':
+        'Adana Arkeoloji Müzesi, bölgenin antik çağlardan gelen tarihi eserlerini barındırır.',
+    'Adana Devlet Tiyatrosu':
+        'Adana Devlet Tiyatrosu, şehre kültürel katkılarda bulunan önemli bir sahnedir.',
+    'Adana Kebabı':
+        'Dünyaca ünlü Adana kebabı, baharatlı ve kuzu etinden yapılır.',
+    'Taşköprü': 'Adana\'nın simgelerinden biri olan tarihi taş köprüdür.',
+
+    // Ankara
+    'Anadolu Medeniyetleri Müzesi':
+        'Ankara’nın en önemli müzelerinden biri olan Anadolu Medeniyetleri Müzesi, pek çok tarihsel eseri sergiler.',
+    'Atatürk Müzesi':
+        'Mustafa Kemal Atatürk’ün anılarını ve kişisel eşyalarını barındıran önemli bir müzedir.',
+    'Ankara Devlet Tiyatrosu':
+        'Ankara Devlet Tiyatrosu, başkentteki en prestijli tiyatro salonlarından biridir.',
+    'Anıtkabir':
+        'Türkiye Cumhuriyeti\'nin kurucusu Mustafa Kemal Atatürk’ün anıt mezarıdır.',
+
+    // Antalya
+    'Antalya Müzesi':
+        'Antalya Müzesi, bölgedeki arkeolojik kazılardan çıkarılan eserlerin sergilendiği önemli bir müzedir.',
+    'Saklıkent Kanyonu Müzesi':
+        'Saklıkent Kanyonu, aynı adı taşıyan müzesiyle doğa ve tarih severlerin ilgisini çeker.',
+    'Antalya Devlet Tiyatrosu':
+        'Antalya Devlet Tiyatrosu, Antalya’daki kültürel etkinliklerin merkezi olan bir sahnedir.',
+    'Aspendos':
+        'Roma dönemine ait en iyi korunmuş antik tiyatrolardan biridir.',
+
     // İstanbul
     'Topkapı Sarayı':
         'Osmanlı padişahlarının yaşadığı ve devleti yönettiği saraydır.',
@@ -459,6 +501,8 @@ class IlDetaySayfasi extends StatelessWidget {
         'Türkiye\'nin en büyük ve en önemli müzelerinden biridir.',
     'Galata Kulesi':
         'İstanbul\'un en eski ve en güzel manzarasına sahip kulelerinden biridir.',
+    'Ayasofya':
+        'Ayasofya, İstanbul\'un simgesi haline gelmiş tarihi bir yapıdır.',
 
     // İzmir
     'Efes Antik Kenti':
@@ -468,34 +512,143 @@ class IlDetaySayfasi extends StatelessWidget {
     'Kordon Lokantası':
         'Deniz kenarında, Ege mutfağının en lezzetli örneklerini sunar.',
 
-    // Ankara
-    'Anıtkabir':
-        'Türkiye Cumhuriyeti\'nin kurucusu Mustafa Kemal Atatürk\'ün anıt mezarıdır.',
-    'Anadolu Medeniyetleri Müzesi':
-        'Paleolitik çağdan Roma dönemine kadar geniş bir koleksiyona sahiptir.',
-    'Augustus Tapınağı':
-        'Roma dönemine ait tarihi bir tapınaktır ve kitabeleriyle ünlüdür.',
+    // Zonguldak
+    'Filyos Antik Kenti': 'Zonguldak’taki önemli antik kentlerden biridir.',
+    'Zonguldak Tiyatro Salonu':
+        'Zonguldak’taki kültürel etkinliklerin yapıldığı tiyatro salonudur.',
+    'Zonguldak Koyu': 'Zonguldak’ın tarihi ve doğal güzelliklerinden biridir.',
 
-    // Antalya
-    'Aspendos':
-        'Roma dönemine ait en iyi korunmuş antik tiyatrolardan biridir.',
-    'Kaleiçi':
-        'Tarihi evleri, dar sokakları ve denize açılan manzarası ile ünlü eski şehir bölgesidir.',
-    'Antalya Müzesi':
-        'Bölgedeki kazılardan çıkarılan arkeolojik eserleri barındırır.',
+    // Trabzon
+    'Trabzon Ayasofya Müzesi':
+        'Trabzon’daki en eski yapıtlar arasında yer alır.',
+    'Uzungöl': 'Trabzon’un en bilinen doğal güzelliklerinden biridir.',
+    'Sümela Manastırı':
+        'Sümela Manastırı, Trabzon’un en önemli tarihi yapılarından biridir.',
 
-    // Şanlıurfa
-    'Göbeklitepe':
-        'Dünyanın bilinen en eski tapınak kompleksi olup, insanlık tarihini değiştirmiştir.',
-    'Şanlıurfa Arkeoloji Müzesi':
-        'Göbeklitepe ve çevresindeki kazılardan çıkan eserleri barındırır.',
-    'Şanlıurfa Kebabı': 'Urfa’ya özgü baharatsız ve bol yağlı kebap çeşididir.',
-    'Şanlıurfa Devlet Tiyatrosu':
-        'devşetin açtığı  yer EN BÜYÜK FENERBAHÇE 1907',
-    //Şırnak
-    'jhewffhu':
-        'hvıuhgeıufghrıugfrwıeuf'
-        'tkjgheurtıhgeuı',
+    // Bursa
+    'Bursa Ulu Camii':
+        'Bursa’nın en eski camilerinden biri olup Osmanlı mimarisinin önemli örneklerindendir.',
+    'Bursa Teleferik':
+        'Bursa’daki Uludağ’a çıkan teleferik, şehre muazzam bir manzara sunar.',
+    'Koza Han':
+        'Osmanlı dönemine ait tarihi bir çarşıdır ve ipek üretimi ile ünlüdür.',
+
+    // Diyarbakır
+    'Diyarbakır Sur':
+        'Diyarbakır’ın tarihi surları, şehrin geçmişine ışık tutmaktadır.',
+    'Diyarbakır Arkeoloji Müzesi':
+        'Diyarbakır’ın bölgesel tarihine ait önemli eserler sergilenmektedir.',
+    'Hasan Paşa Hanı': 'Diyarbakır’ın önemli tarihi yapılarından biridir.',
+
+    // Mardin
+    'Mardin Kalesi':
+        'Mardin Kalesi, şehre hakim bir tepede yer alan tarihi bir kaleydi.',
+    'Mardin Evleri': 'Mardin’in taş evleri, şehre özgü mimari örneklerdir.',
+    'Deyrulzafaran Manastırı':
+        'Mardin’deki en eski manastırlardan biridir ve önemli bir dini merkezdir.',
+
+    // Konya
+    'Mevlana Müzesi':
+        'Mevlana Celaleddin Rumi’nin türbesi olan bu müze, Konya’nın en önemli turistik yerlerinden biridir.',
+    'Konya Tropikal Kelebek Bahçesi':
+        'Konya’daki en ilginç doğal alanlardan biridir.',
+    'Alaaddin Tepesi':
+        'Konya’nın merkezine hakim olan bu tepe, şehri izlemek için popüler bir yerdir.',
+
+    // Kayseri
+    'Kayseri Kalesi': 'Kayseri Kalesi, şehri koruyan tarihi bir kaledir.',
+    'Erciyes Dağı':
+        'Kayseri’deki en yüksek dağ olan Erciyes, kayak ve doğa sporları için popüler bir bölgedir.',
+    'Gevher Nesibe Tıp Müzesi':
+        'Gevher Nesibe Tıp Müzesi, Selçuklu döneminin önemli bir tıp müzesidir.',
+
+    // Van
+    'Van Gölü':
+        'Van Gölü, Türkiye’nin en büyük gölüdür ve çevresi doğal güzelliklerle doludur.',
+    'Akdamar Adası':
+        'Van Gölü’nde yer alan bu ada, Akdamar Kilisesi ile ünlüdür.',
+    'Van Kalesi': 'Van Kalesi, tarihi bir kale olup gölün etrafında yer alır.',
+
+    // Tekirdağ
+    'Tekirdağ Arkeoloji Müzesi':
+        'Tekirdağ Arkeoloji Müzesi, bölgenin tarihini anlatan önemli eserleri sergiler.',
+    'Rakoczi Müzesi':
+        'Macar prensi II. Rakoczi’nin yaşamını anlatan bir müzedir.',
+    'Tekirdağ Sahili':
+        'Tekirdağ’ın sahil hattı, deniz ve doğa severler için popüler bir alandır.',
+
+    // Çanakkale
+    'Çanakkale Şehitler Abidesi':
+        'Çanakkale’deki en büyük anıt ve şehitliklerden biridir.',
+    'Troy Antik Kenti':
+        'Troy, dünyanın en eski ve en ünlü antik kentlerinden biridir.',
+    'Çanakkale Deniz Müzesi':
+        'Çanakkale’deki denizcilik tarihini anlatan önemli bir müzedir.',
+
+    // Aydın
+    'Aydın Arkeoloji Müzesi':
+        'Aydın’daki antik yerleşimlere ait birçok tarihi eser burada sergilenmektedir.',
+    'Milet Antik Kenti':
+        'Aydın il sınırlarında bulunan antik kent, tarihi zenginliği ile ünlüdür.',
+    'Kuşadası':
+        'Aydın’ın sahil ilçesi olan Kuşadası, plajları ve tatil beldeleriyle ünlüdür.',
+
+    // Samsun
+    'Atakum Sahili': 'Samsun’daki en popüler plajlardan biridir.',
+    'Samsun Arkeoloji Müzesi':
+        'Samsun ve çevresindeki kazılardan çıkarılan arkeolojik eserler burada sergilenmektedir.',
+    'Amisos Tepesi':
+        'Samsun’da, Antik Amisos Kenti’nin kalıntıları bu tepede yer almaktadır.',
+
+    // Çorum
+    'Hattuşaş':
+        'Çorum il sınırlarında bulunan ve Hititler’in başkenti olan antik kenttir.',
+    'Çorum Arkeoloji Müzesi':
+        'Çorum’a ait antik çağlara ait önemli eserler burada sergilenmektedir.',
+
+    // Erzincan
+    'Erzincan Evleri':
+        'Erzincan’ın geleneksel taş yapıları, şehrin tarihi dokusunu yansıtır.',
+    'Erzincan Arkeoloji Müzesi':
+        'Erzincan’a ait tarihsel eserler burada sergilenmektedir.',
+
+    // Eskişehir
+    'Odunpazarı Evleri':
+        'Eskişehir’in tarihi evleri, şehre özgü mimarisiyle ünlüdür.',
+    'Eskişehir Arkeoloji Müzesi':
+        'Bölgedeki kazılardan çıkarılan önemli tarihi eserler burada sergilenmektedir.',
+    'Porsuk Çayı':
+        'Eskişehir’in merkezinden geçen ve etrafında yürüyüş alanları bulunan çaydır.',
+
+    // Balıkesir
+    'Kaz Dağları':
+        'Balıkesir’in en ünlü doğal zenginliklerinden biri olan Kaz Dağları, doğa severler için popüler bir yerdir.',
+    'Balıkesir Arkeoloji Müzesi':
+        'Balıkesir ve çevresindeki tarihi eserlerin sergilendiği önemli bir müzedir.',
+
+    // Kocaeli
+    'Gebze Osman Hamdi Bey Müzesi':
+        'Osman Hamdi Bey’in önemli sanat eserlerini içeren bir müzedir.',
+    'Kocaeli Arkeoloji Müzesi':
+        'Kocaeli’nin tarihi ve arkeolojik zenginliklerini sergileyen bir müzedir.',
+    // Hakkari
+    'Cilo Dağı':
+        'Cilo Dağı, Hakkari il sınırlarında yer alan ve dağcılar için popüler bir tırmanış rotasıdır.',
+    'Yüksekova':
+        'Yüksekova, Hakkari’nin önemli ilçelerinden biri olup doğa güzellikleriyle ünlüdür.',
+    'Hakkari Müzesi':
+        'Hakkari ilinin kültürünü ve tarihini anlatan eserlerin sergilendiği bir müzedir.',
+
+    // Kars
+    'Ani Antik Kenti':
+        'Kars’a bağlı Ani Antik Kenti, Orta Çağ’dan kalma önemli bir yerleşim alanıdır ve UNESCO Dünya Mirası Listesi’nde yer alır.',
+    'Kars Kalesi':
+        'Kars’ın simgelerinden biri olan bu kale, şehre hakim bir tepede yer alır.',
+    'Sarıkamış Kayak Merkezi':
+        'Sarıkamış Kayak Merkezi, Kars’a bağlı bir bölge olup kış sporları için popülerdir.',
+    'Kars Müzesi':
+        'Kars Müzesi, şehrin tarihi ve kültürüne dair zengin bir koleksiyona sahiptir.',
+    // [Diğer şehirlerin devamı burada yer alacak...]
   };
 
   // Google arama fonksiyonu
