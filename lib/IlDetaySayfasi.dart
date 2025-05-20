@@ -402,7 +402,7 @@ class IlDetaySayfasi extends StatelessWidget {
       'Müzeler': ['Tokat Müzesi'],
       'Tiyatro Salonları': ['Tokat Kültür Merkezi'],
       'Restoranlar': ['Tokat Mantı Evi'],
-      'Tarihi Yerler': ['Tokat Kalesi'],
+      'Tarihi Yerler': ['Tokat Kalesi', 'fkjheufheuı'],
     },
     'Trabzon': {
       'Müzeler': ['Trabzon Arkeoloji Müzesi'],
@@ -442,6 +442,62 @@ class IlDetaySayfasi extends StatelessWidget {
     },
   };
 
+  // Mekan açıklamaları
+  final Map<String, String> mekanDetaylari = {
+    'Erzurum Kalesi':
+        'Erzurum Kalesi, Roma dönemine kadar uzanan köklü bir geçmişe sahiptir.',
+    'Erzurum Arkeoloji Müzesi':
+        'Bu müzede Erzurum ve çevresine ait birçok arkeolojik eser sergilenmektedir.',
+    'Erzurum Cağ Kebabı':
+        'Meşhur Erzurum yemeği olan cağ kebabı, yatay şişlerde servis edilir.',
+    'Erzurum Devlet Tiyatrosu':
+        'Şehirde kültürel etkinliklerin düzenlendiği önemli bir sahnedir.',
+    // İstanbul
+    'Topkapı Sarayı':
+        'Osmanlı padişahlarının yaşadığı ve devleti yönettiği saraydır.',
+    'İstanbul Arkeoloji Müzesi':
+        'Türkiye\'nin en büyük ve en önemli müzelerinden biridir.',
+    'Galata Kulesi':
+        'İstanbul\'un en eski ve en güzel manzarasına sahip kulelerinden biridir.',
+
+    // İzmir
+    'Efes Antik Kenti':
+        'Dünyaca ünlü antik kent, Artemis Tapınağı ve Celsus Kütüphanesi ile bilinir.',
+    'İzmir Arkeoloji Müzesi':
+        'Antik Yunan ve Roma dönemine ait eserlerin sergilendiği önemli bir müzedir.',
+    'Kordon Lokantası':
+        'Deniz kenarında, Ege mutfağının en lezzetli örneklerini sunar.',
+
+    // Ankara
+    'Anıtkabir':
+        'Türkiye Cumhuriyeti\'nin kurucusu Mustafa Kemal Atatürk\'ün anıt mezarıdır.',
+    'Anadolu Medeniyetleri Müzesi':
+        'Paleolitik çağdan Roma dönemine kadar geniş bir koleksiyona sahiptir.',
+    'Augustus Tapınağı':
+        'Roma dönemine ait tarihi bir tapınaktır ve kitabeleriyle ünlüdür.',
+
+    // Antalya
+    'Aspendos':
+        'Roma dönemine ait en iyi korunmuş antik tiyatrolardan biridir.',
+    'Kaleiçi':
+        'Tarihi evleri, dar sokakları ve denize açılan manzarası ile ünlü eski şehir bölgesidir.',
+    'Antalya Müzesi':
+        'Bölgedeki kazılardan çıkarılan arkeolojik eserleri barındırır.',
+
+    // Şanlıurfa
+    'Göbeklitepe':
+        'Dünyanın bilinen en eski tapınak kompleksi olup, insanlık tarihini değiştirmiştir.',
+    'Şanlıurfa Arkeoloji Müzesi':
+        'Göbeklitepe ve çevresindeki kazılardan çıkan eserleri barındırır.',
+    'Şanlıurfa Kebabı': 'Urfa’ya özgü baharatsız ve bol yağlı kebap çeşididir.',
+    'Şanlıurfa Devlet Tiyatrosu':
+        'devşetin açtığı  yer EN BÜYÜK FENERBAHÇE 1907',
+    //Şırnak
+    'jhewffhu':
+        'hvıuhgeıufghrıugfrwıeuf'
+        'tkjgheurtıhgeuı',
+  };
+
   // Google arama fonksiyonu
   void _aramaYap(BuildContext context) async {
     TextEditingController controller = TextEditingController();
@@ -467,6 +523,42 @@ class IlDetaySayfasi extends StatelessWidget {
               ),
               TextButton(
                 child: Text("İptal"),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+    );
+  }
+
+  // Mekan bilgisi gösterme fonksiyonu
+  void _mekanDetayiGoster(BuildContext context, String item) {
+    final bilgi = mekanDetaylari[item];
+    showDialog(
+      context: context,
+      builder:
+          (_) => AlertDialog(
+            title: Text(item),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(bilgi ?? 'Bu yer hakkında bilgi bulunamadı.'),
+                if (bilgi == null)
+                  TextButton(
+                    child: Text('Google’da Ara'),
+                    onPressed: () async {
+                      final url = Uri.parse(
+                        'https://www.google.com/search?q=$item',
+                      );
+                      if (await canLaunchUrl(url)) {
+                        await launchUrl(url);
+                      }
+                    },
+                  ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                child: Text('Kapat'),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
@@ -520,6 +612,9 @@ class IlDetaySayfasi extends StatelessWidget {
                                           color: Colors.green[700],
                                         ),
                                       ),
+                                      onTap:
+                                          () =>
+                                              _mekanDetayiGoster(context, item),
                                     );
                                   }).toList()
                                   : [
